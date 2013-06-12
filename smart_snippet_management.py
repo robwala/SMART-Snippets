@@ -7,7 +7,7 @@ Copyright (c) 2012 William Cain
 import os
 import sublime
 import sublime_plugin
-import _snippetloader as SS
+import SMART_Snippets._snippetloader as SS
 
 class NewSmartSnippet(sublime_plugin.WindowCommand):
 	def run(self):
@@ -34,7 +34,7 @@ class NewSmartSnippetListener(sublime_plugin.EventListener):
 			# for k,v in SS.snip_files.items():
 			# 	if v == view.file_name() and k != trig:
 			# 		del SS.snip_files[k]
-			
+
 			if trig in SS.snip_files.keys():
 				if not view.file_name() in SS.snip_files.values():
 					with open(SS.snip_files.get(trig), 'r') as f:
